@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-track, #fdf2f8);
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb, #ec4899);
+  border-radius: 8px;
+  border: 3px solid var(--scrollbar-track, #fdf2f8);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover, #db2777);
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Animation Keyframes */
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes glow {
+  0%, 100% { filter: drop-shadow(0 0 2px var(--glow-color, #ec4899)); }
+  50% { filter: drop-shadow(0 0 15px var(--glow-color, #ec4899)); }
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-pulse-slow {
+  animation: pulse 3s infinite;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-glow {
+  animation: glow 3s ease-in-out infinite;
+}
+
+.animate-gradient {
+  animation: gradient 15s ease infinite;
+  background-size: 400% 400%;
+}
+
+/* Code styling */
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  padding: 0.2em 0.4em;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 0.25rem;
+}
+
+/* Dark mode scrollbar */
+.dark-theme {
+  --scrollbar-track: #1a1b26;
+  --scrollbar-thumb: #a855f7;
+  --scrollbar-thumb-hover: #9333ea;
+  --glow-color: #a855f7;
+}
+
+/* Light mode scrollbar */
+.light-theme {
+  --scrollbar-track: #fdf2f8;
+  --scrollbar-thumb: #ec4899;
+  --scrollbar-thumb-hover: #db2777;
+  --glow-color: #ec4899;
+}
